@@ -45,13 +45,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.publish.outputs.tag_name }}
-        release_name: ${{ steps.publish.outputs.tag_name }}
+        tag_name: ${{ steps.check.outputs.version }}
+        release_name: ${{ steps.check.outputs.version }}
         draft: false
-        prerelease: ${{ steps.publish.outputs.is_tagged_release }}
+        prerelease: false # ${{ steps.publish.outputs.is_tagged_release }}
 
     - name: Upload release asset
-      if: steps.publish.outputs.has_published # create release only if publish to NPM has succeeded
+      if: steps.create_release.outputs.id # create release only if publish to NPM has succeeded
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
