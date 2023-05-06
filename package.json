@@ -1,0 +1,23 @@
+{
+  "name": "github-actions-publish-on-version-change",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endel/github-actions-publish-on-version-change.git"
+  },
+  "author": "Endel Dreyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/endel/github-actions-publish-on-version-change/issues"
+  },
+  "homepage": "https://github.com/endel/github-actions-publish-on-version-change#readme",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}
